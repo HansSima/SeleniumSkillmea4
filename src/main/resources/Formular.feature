@@ -6,3 +6,8 @@ Feature: Formular
     And Uzivatel klikne na radiobutton female
     Then Uzivatel vidi zaskrtnuto female
     And Uzivatel vidi odskrtnuto male
+
+  Scenario: Kontrola radiobutton - 2
+    Given Uzivatel je na strance s formularem
+    When Uzivatel klikne na radiobutton female
+    Then Uzivatel vidi zaskrtnuto female
