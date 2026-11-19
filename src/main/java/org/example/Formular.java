@@ -1,5 +1,6 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,8 @@ public class Formular {
 
   @BeforeEach
   public void setUp() {
-    System.setProperty("webdriver.chrome.driver", "C:\\Users\\hanss\\OneDrive\\Plocha\\StudijniMaterialy\\Studijni_material\\Studijni_material\\12_Playwright\\Kod\\SeleniumSkillmea4\\src\\main\\resources\\chromedriver.exe");
+    //System.setProperty("webdriver.chrome.driver", "C:\\Users\\hanss\\OneDrive\\Plocha\\StudijniMaterialy\\Studijni_material\\Studijni_material\\12_Playwright\\Kod\\SeleniumSkillmea4\\src\\main\\resources\\chromedriver.exe");
+    WebDriverManager.chromedriver().setup();
     driver = new ChromeDriver();
   }
 
