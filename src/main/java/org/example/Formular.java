@@ -1,6 +1,5 @@
 package org.example;
 
-import org.junit.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,7 @@ public class Formular {
 
   @BeforeEach
   public void setUp() {
-    System.setProperty("webdriver.chrome.driver", "");
+    System.setProperty("webdriver.chrome.driver", "C:\\Users\\hanss\\OneDrive\\Plocha\\StudijniMaterialy\\Studijni_material\\Studijni_material\\12_Playwright\\Kod\\SeleniumSkillmea4\\src\\main\\resources\\chromedriver.exe");
     driver = new ChromeDriver();
   }
 
@@ -20,12 +19,12 @@ public class Formular {
   public void testFormular() {
     driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
     driver.findElement(By.id("name")).clear();
-    driver.findElement(By.id("name")).sendKeys("Jan");
+    driver.findElement(By.id("name")).sendKeys("Petr");
     driver.findElement(By.id("email")).clear();
     driver.findElement(By.id("email")).sendKeys("email@email.com");
     driver.findElement(By.id("gender")).click();
     driver.findElement(By.id("mobile")).clear();
-    driver.findElement(By.id("mobile")).sendKeys("1234567890");
+    driver.findElement(By.id("mobile")).sendKeys("8234567809");
     driver.findElement(By.id("dob")).clear();
     driver.findElement(By.id("dob")).sendKeys("2026-11-05");
   }
