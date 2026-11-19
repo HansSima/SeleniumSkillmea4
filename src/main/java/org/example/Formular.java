@@ -10,6 +10,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Formular {
   private WebDriver driver;
@@ -25,15 +26,18 @@ public class Formular {
 
   @Test
   public void testFormular() {
+    WebElement femaleRadiobutton = driver.findElement(By.xpath("/html/body/main/div/div/div[2]/form/div[3]/div/div/div[2]/input"));
     driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
     driver.manage().window().maximize();
     driver.findElement(By.id("name")).sendKeys("Petr");
     driver.findElement(By.id("email")).sendKeys("email@email.com");
     driver.findElement(By.id("gender")).click();
+    femaleRadiobutton.click();
     driver.findElement(By.id("mobile")).sendKeys("8234567809");
     driver.findElement(By.id("dob")).sendKeys("20.02.1995");
     String skutecnyNadpis = driver.findElement(By.xpath("/html/body/main/div/div/div[2]/form/h1")).getText();
-    assertEquals("Student registration Form", skutecnyNadpis);
+    assertEquals("Student Registration Form", skutecnyNadpis);
+    assertTrue(femaleRadiobutton.isSelected());
   }
 
   @AfterEach
