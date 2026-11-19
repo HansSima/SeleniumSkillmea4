@@ -1,15 +1,16 @@
 package org.example;
 
 import org.junit.*;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Formular {
   private WebDriver driver;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     System.setProperty("webdriver.chrome.driver", "");
     driver = new ChromeDriver();
@@ -29,7 +30,7 @@ public class Formular {
     driver.findElement(By.id("dob")).sendKeys("2026-11-05");
   }
 
-  @After
+  @AfterEach
   public void tearDown() {
     driver.quit();
   }
