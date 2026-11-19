@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Formular {
   private WebDriver driver;
@@ -28,7 +29,8 @@ public class Formular {
     driver.findElement(By.id("mobile")).clear();
     driver.findElement(By.id("mobile")).sendKeys("8234567809");
     driver.findElement(By.id("dob")).clear();
-    driver.findElement(By.id("dob")).sendKeys("2026-11-05");
+    driver.findElement(By.id("dob")).sendKeys("20.02.1995");
+    assertEquals("Student registration Form", driver.findElement(By.xpath("/html/body/main/div/div/div[2]/form/h1")).getText());
   }
 
   @AfterEach
