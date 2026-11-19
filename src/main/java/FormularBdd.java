@@ -15,8 +15,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FormularBdd {
     private WebDriver driver;
-    WebElement femaleRadiobutton = driver.findElement(By.xpath("/html/body/main/div/div/div[2]/form/div[3]/div/div/div[2]/input"));
-    WebElement maleRadiobutton = driver.findElement(By.id("gender"));
+    WebElement femaleRadiobutton;
+    WebElement maleRadiobutton;
 
     @BeforeEach
     public void setUp() {
@@ -33,11 +33,13 @@ public class FormularBdd {
 
     @When("Uzivatel klikne na radiobutton male")
     public void uzivatelKlikneNaRadiobuttonMale() {
+        maleRadiobutton = driver.findElement(By.id("gender"));
         maleRadiobutton.click();
     }
 
     @And("Uzivatel klikne na radiobutton female")
     public void uzivatelKlikneNaRadiobuttonFemale() {
+        femaleRadiobutton = driver.findElement(By.xpath("/html/body/main/div/div/div[2]/form/div[3]/div/div/div[2]/input"));
         femaleRadiobutton.click();
     }
 
